@@ -93,7 +93,11 @@ def exercise04(more_temperatures, iot_sensor_points, a, b, c, d, e):
     copy_of_samples = []
 
     # ------ Place code below here \/ \/ \/ ------
-
+    temperatures = more_temperatures + iot_sensor_points+a+b+c+d+e
+    temperatures = sorted(temperatures,reverse = True)
+    sample = temperature[::5]
+    copy_of_samples = sample
+    copy_of_samples = sorted(sample)
 
 
     # ------ Place code above here /\ /\ /\ ------
@@ -106,7 +110,16 @@ def exercise05(n):
 
     # ------ Place code below here \/ \/ \/ ------
 
-    pass # Remove this line
+    def factorial(n):
+    print("factorial has been called with n = " + str(n))
+    if n == 1:
+        return 1
+    else:
+        res = n * factorial(n-1)
+        print("intermediate result for ", n, " * factorial(" ,n-1, "): ",res)
+        return res	
+
+print(factorial(5))
 
     # ------ Place code above here /\ /\ /\ ------
 
@@ -115,7 +128,9 @@ def exercise06(n):
      # This function will receive an arbitrary list of numbers of arbitrary size and find the average of those numbers. The size of the list may vary. Find the method that requires the  least amount of code. Return back the length, sum of list and average of list
 
     # ------ Place code below here \/ \/ \/ ------
-
+length_n=len(n)
+    sum_n=sum(n)
+    average_n=sum_n/length_n
 
     # ------ Place code above here /\ /\ /\ ------
     return length_n, sum_n, average_n
@@ -125,7 +140,17 @@ def exercise07(n):
     # This function looks for duplicates in list n. If there is a duplicate False is returned. If there are no duplicates True is returned.
 
     # ------ Place code below here \/ \/ \/ ------
+lst = [ n ]
+duplicate = False
+no_duplicate = True
+for item in lst:
+    if lst.count(item) > 1:
+        status = False
 
+if status == True:
+    return no_duplicate
+else:
+    return duplicate
 
     # ------ Place code above here /\ /\ /\ ------
 
@@ -155,7 +180,9 @@ def exercise09():
     print(str(dog_media.content))
     
     # ------ Place code below here \/ \/ \/ ------
-    
+    for n in range(0,9):
+        dogs.append(str(dog_media.content))
+        dog_media=r.get(url=url)
 
 
     # ------ Place code above here /\ /\ /\ ------
@@ -168,7 +195,11 @@ def exercise10(sentence):
     reversed = ''
 
     # ------ Place code below here \/ \/ \/ ------
-    
+    reversed_seq = sentence[::-1]
+    case_change = reversed_seq.swapcase()
+    for i in case_change[1:]:
+             case_change += '-' + i
+    reversed = case_change
 
 
     # ------ Place code above here /\ /\ /\ ------
